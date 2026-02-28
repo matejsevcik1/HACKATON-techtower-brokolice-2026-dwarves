@@ -1,0 +1,158 @@
+[gd_scene load_steps=16 format=3 uid="uid://bniqy2lnq4b8j"]
+
+[ext_resource type="Script" uid="uid://pcpicttpopeg" path="res://scripts/smelter.gd" id="1_fmp04"]
+[ext_resource type="Texture2D" uid="uid://cyp1pgaimtugf" path="res://assets/images/buildings/pec.png" id="2_kyrrd"]
+[ext_resource type="Texture2D" uid="uid://dphcxsrlgpjcu" path="res://assets/images/gui/smelters_bez_tlacitek.png" id="3_38f0m"]
+[ext_resource type="Texture2D" uid="uid://do8o5uh0p6nbp" path="res://assets/images/gui/satanek_button_close.png" id="4_8f58d"]
+[ext_resource type="Texture2D" uid="uid://clk0k7d5ldx84" path="res://assets/images/gui/tlacitko_male.png" id="4_kt0kq"]
+[ext_resource type="Texture2D" uid="uid://dtktpshl3tmn1" path="res://assets/images/gui/pressed.png" id="5_kyrrd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fmp04"]
+radius = 11.045361
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnogs"]
+atlas = ExtResource("2_kyrrd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3pua"]
+atlas = ExtResource("2_kyrrd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1d3r"]
+atlas = ExtResource("2_kyrrd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd7jx"]
+atlas = ExtResource("2_kyrrd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru44y"]
+atlas = ExtResource("2_kyrrd")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mhc8"]
+atlas = ExtResource("2_kyrrd")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w6u0b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnogs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3pua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1d3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd7jx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru44y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mhc8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 18.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_38f0m"]
+radius = 11.0
+
+[node name="smeleter" type="StaticBody2D"]
+script = ExtResource("1_fmp04")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fmp04")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -6)
+sprite_frames = SubResource("SpriteFrames_w6u0b")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_38f0m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 263.0
+texture = ExtResource("3_38f0m")
+stretch_mode = 6
+
+[node name="Button1" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 80.0
+offset_right = 468.0
+offset_bottom = 113.0
+texture_normal = ExtResource("4_kt0kq")
+texture_pressed = ExtResource("5_kyrrd")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Button1"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 6.0
+offset_right = 217.0
+offset_bottom = 29.0
+text = "4 iron ore > 1 iron ingot"
+
+[node name="Button2" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 121.0
+offset_right = 469.0
+offset_bottom = 154.0
+texture_normal = ExtResource("4_kt0kq")
+texture_pressed = ExtResource("5_kyrrd")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Button2"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 224.0
+offset_bottom = 29.0
+text = "4 u-iron ore > 1 u-iron ingot"
+
+[node name="Button3" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 160.0
+offset_right = 470.0
+offset_bottom = 193.0
+texture_normal = ExtResource("4_kt0kq")
+texture_pressed = ExtResource("5_kyrrd")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Button3"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 223.0
+offset_bottom = 30.0
+text = "6 meteo ore > 1 meteo ingot"
+
+[node name="button_off" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 40.0
+offset_bottom = 37.0
+action_mode = 0
+texture_normal = ExtResource("4_8f58d")

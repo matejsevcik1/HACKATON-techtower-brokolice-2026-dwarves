@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdcdryq86sfm6"]
+
+[ext_resource type="Script" uid="uid://dldddts5lsyb0" path="res://scripts/ore_pickup.gd" id="1_67xkq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67xkq"]
+size = Vector2(7, 7.5)
+
+[node name="ore_pickup" type="Area2D"]
+script = ExtResource("1_67xkq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_67xkq")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

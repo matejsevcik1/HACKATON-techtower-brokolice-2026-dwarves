@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://5e37pcehnapi"]
+
+[ext_resource type="Script" uid="uid://37gqnc1yuo0l" path="res://scripts/ladder.gd" id="1_xxwne"]
+[ext_resource type="Texture2D" uid="uid://nee33cqq5wy8" path="res://assets/images/ground/zebriky_spoje.png" id="2_xb1tl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ku54x"]
+atlas = ExtResource("2_xb1tl")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_027jo"]
+
+[node name="ladder" type="StaticBody2D"]
+script = ExtResource("1_xxwne")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_ku54x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_027jo")

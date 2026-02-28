@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5aew73q1t6w8"]
+
+[ext_resource type="Texture2D" uid="uid://lymgnk3hbgxx" path="res://assets/images/buildings/domecky.png" id="1_s0su4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdmwb"]
+size = Vector2(47, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sxo1"]
+atlas = ExtResource("1_s0su4")
+region = Rect2(24, 0, 48, 24)
+
+[node name="shop" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_bdmwb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_3sxo1")

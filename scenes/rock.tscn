@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://csqrecncv1xgs"]
+
+[ext_resource type="Script" uid="uid://c0qd3kc7txanb" path="res://scripts/rock.gd" id="1_ik6fu"]
+[ext_resource type="Texture2D" uid="uid://dfv2wibylc4eg" path="res://assets/images/ores/sutry.png" id="2_mek2u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ik6fu"]
+atlas = ExtResource("2_mek2u")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rmkyt"]
+radius = 5.5
+
+[node name="rock" type="StaticBody2D"]
+script = ExtResource("1_ik6fu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.5, 0)
+scale = Vector2(0.9594595, 1)
+texture = SubResource("AtlasTexture_ik6fu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(-1.5, 0)
+shape = SubResource("CircleShape2D_rmkyt")

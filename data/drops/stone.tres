@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="OreData" load_steps=4 format=3 uid="uid://bl1pno6dkmnth"]
+
+[ext_resource type="Script" uid="uid://cx5yg0bk7musc" path="res://scripts/ore_item.gd" id="1_fsmb4"]
+[ext_resource type="Texture2D" uid="uid://cp1o2fmcklt0m" path="res://assets/images/ores/items.png" id="2_jo7eh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydtff"]
+atlas = ExtResource("2_jo7eh")
+region = Rect2(0, 0, 10, 10)
+
+[resource]
+script = ExtResource("1_fsmb4")
+texture = SubResource("AtlasTexture_ydtff")
+value = 5
+name = "stone"
+metadata/_custom_type_script = "uid://cx5yg0bk7musc"

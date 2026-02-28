@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RockData" load_steps=5 format=3 uid="uid://bjqdi82ld52h3"]
+
+[ext_resource type="Script" uid="uid://deblf2u7bt3jp" path="res://scripts/rock_data.gd" id="1_blrke"]
+[ext_resource type="Resource" uid="uid://bl1pno6dkmnth" path="res://data/drops/stone.tres" id="1_x5ctv"]
+[ext_resource type="Texture2D" uid="uid://dfv2wibylc4eg" path="res://assets/images/ores/sutry.png" id="3_x5ctv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e6pb"]
+atlas = ExtResource("3_x5ctv")
+region = Rect2(0, 0, 24, 24)
+
+[resource]
+resource_local_to_scene = true
+resource_name = "stone"
+script = ExtResource("1_blrke")
+texture = SubResource("AtlasTexture_7e6pb")
+maxHealth = 3
+rarity = 50
+depth = 2
+ore_resource = ExtResource("1_x5ctv")
+metadata/_custom_type_script = "uid://deblf2u7bt3jp"

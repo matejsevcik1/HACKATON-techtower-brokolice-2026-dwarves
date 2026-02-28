@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="RockData" load_steps=3 format=3 uid="uid://be7bmomfllfra"]
+
+[ext_resource type="Script" uid="uid://deblf2u7bt3jp" path="res://scripts/rock_data.gd" id="1_1tea4"]
+[ext_resource type="Texture2D" uid="uid://b343pfb0vdmvl" path="res://assets/images/icons/stone.png" id="2_v8dte"]
+
+[resource]
+script = ExtResource("1_1tea4")
+texture = ExtResource("2_v8dte")
+metadata/_custom_type_script = "uid://deblf2u7bt3jp"

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://biw3q0aw54jau"]
+
+[ext_resource type="Texture2D" uid="uid://c5gn4w164rwef" path="res://assets/images/foliage/stromy.png" id="1_qi5yq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3s3t"]
+atlas = ExtResource("1_qi5yq")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0r321"]
+size = Vector2(20, 23)
+
+[node name="treenorm" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_t3s3t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_0r321")

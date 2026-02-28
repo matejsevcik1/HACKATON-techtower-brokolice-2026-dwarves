@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LadderData" load_steps=4 format=3 uid="uid://cntnej7gqeasd"]
+
+[ext_resource type="Script" uid="uid://b2saoeetc0ko6" path="res://scripts/ladder_data.gd" id="1_rp4e2"]
+[ext_resource type="Texture2D" uid="uid://nee33cqq5wy8" path="res://assets/images/ground/zebriky_spoje.png" id="2_ptje4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83qwe"]
+atlas = ExtResource("2_ptje4")
+region = Rect2(24, 24, 24, 24)
+
+[resource]
+script = ExtResource("1_rp4e2")
+texture = SubResource("AtlasTexture_83qwe")
+target_position = Vector2(1042.5, 129.5)
+metadata/_custom_type_script = "uid://b2saoeetc0ko6"

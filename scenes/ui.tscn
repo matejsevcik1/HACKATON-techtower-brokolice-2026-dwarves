@@ -1,0 +1,178 @@
+[gd_scene load_steps=12 format=3 uid="uid://d56sriw6kiel"]
+
+[ext_resource type="Script" uid="uid://bgudglaq0x86r" path="res://scripts/ui.gd" id="1_5mppo"]
+[ext_resource type="Texture2D" uid="uid://b343pfb0vdmvl" path="res://assets/images/icons/stone.png" id="2_cgfq5"]
+[ext_resource type="Texture2D" uid="uid://c8xrefbscmele" path="res://assets/images/icons/iron_ore.png" id="3_7dvkv"]
+[ext_resource type="Texture2D" uid="uid://d3dlw148502ev" path="res://assets/images/icons/iron_ingot.png" id="4_vdcm2"]
+[ext_resource type="Texture2D" uid="uid://bh7k3axhw7ics" path="res://assets/images/icons/urukh_iron_ore.png" id="5_6rmj2"]
+[ext_resource type="Texture2D" uid="uid://k465tjnwjegc" path="res://assets/images/icons/urukh_iron_ingot.png" id="6_vsj0x"]
+[ext_resource type="Texture2D" uid="uid://b1va0qykvrl37" path="res://assets/images/icons/meteorite_ore.png" id="7_qsv74"]
+[ext_resource type="Texture2D" uid="uid://btok068quqc4y" path="res://assets/images/icons/meteorite_ingot.png" id="8_h1mc3"]
+[ext_resource type="Texture2D" uid="uid://c5k2xx2upgspj" path="res://assets/images/ores/gold_tiem.png" id="9_cof4p"]
+
+[sub_resource type="FontFile" id="FontFile_cgfq5"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="Theme" id="Theme_7dvkv"]
+default_base_scale = 0.71
+default_font = SubResource("FontFile_cgfq5")
+
+[node name="ui_overlay" type="CanvasLayer"]
+script = ExtResource("1_5mppo")
+metadata/_edit_horizontal_guides_ = [0.0]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 432.0
+offset_top = 31.0
+offset_right = 479.0
+offset_bottom = 257.0
+theme = SubResource("Theme_7dvkv")
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 21.0
+offset_top = 8.0
+offset_right = 36.0
+offset_bottom = 220.0
+
+[node name="Label" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Label2" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Label3" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Label4" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Label5" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Label6" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Label7" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Label8" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect7" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.952
+anchor_bottom = 0.952
+offset_left = 439.0
+offset_top = 171.92
+offset_right = 449.0
+offset_bottom = 181.92
+texture = ExtResource("8_h1mc3")
+expand_mode = 2
+
+[node name="TextureRect8" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.071
+anchor_top = 0.75200003
+anchor_right = 0.071
+anchor_bottom = 0.75200003
+offset_left = 436.16
+offset_top = 205.92
+offset_right = 446.16
+offset_bottom = 215.92
+texture = ExtResource("9_cof4p")
+expand_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 46.0
+offset_right = 449.0
+offset_bottom = 56.0
+texture = ExtResource("2_cgfq5")
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 439.0
+offset_top = 75.0
+offset_right = 449.0
+offset_bottom = 85.0
+texture = ExtResource("3_7dvkv")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 439.0
+offset_top = 102.0
+offset_right = 449.0
+offset_bottom = 112.0
+texture = ExtResource("4_vdcm2")
+expand_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 439.0
+offset_top = 130.0
+offset_right = 449.0
+offset_bottom = 140.0
+texture = ExtResource("5_6rmj2")
+expand_mode = 2
+
+[node name="TextureRect6" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 439.0
+offset_top = 183.0
+offset_right = 449.0
+offset_bottom = 193.0
+texture = ExtResource("7_qsv74")
+expand_mode = 2
+
+[node name="TextureRect5" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 439.0
+offset_top = 156.0
+offset_right = 449.0
+offset_bottom = 166.0
+texture = ExtResource("6_vsj0x")
+expand_mode = 2
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 2.0
+offset_top = 220.0
+offset_right = 194.0
+offset_bottom = 260.0
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 8.0
+offset_right = 194.0
+offset_bottom = 31.0
