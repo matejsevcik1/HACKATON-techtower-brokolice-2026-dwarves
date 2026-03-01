@@ -13,6 +13,7 @@ resource_local_to_scene = true
 resource_name = "stone"
 script = ExtResource("1_blrke")
 texture = SubResource("AtlasTexture_7e6pb")
+category = 1
 maxHealth = 3
 rarity = 50
 depth = 2

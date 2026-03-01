@@ -10,6 +10,9 @@ extends StaticBody2D
 @onready var button2: TextureButton = $CanvasLayer/Control/TextureButton2
 @onready var button1: TextureButton = $CanvasLayer/Control/TextureButton1
 @onready var button5: TextureButton = $CanvasLayer/Control/TextureButton5
+const PRESSED_GREEN = preload("uid://cwpl6jkn5up0f")
+const PRESSED_RED = preload("uid://c2ltee0fdjxli")
+const TLACITKO_GREEN_NORM = preload("uid://cpc0jksfcl20k")
 
 
 #button1 wood to stone level if 10 stone
@@ -38,6 +41,26 @@ func open_ui(player):
 	ui_root.visible = true
 	player.is_using_shop = true
 	player.velocity = Vector2.ZERO
+	if current_player.inventory["stone"] >= 10:
+		button1.texture_pressed = PRESSED_GREEN
+	else:
+		button1.texture_pressed = PRESSED_RED
+	if current_player.inventory["iron_ingot"] >= 3:
+		button2.texture_pressed = PRESSED_GREEN
+	else:
+		button2.texture_pressed = PRESSED_RED
+	if current_player.inventory["urukh_iron_ingot"] >= 2:
+		button3.texture_pressed = PRESSED_GREEN
+	else:
+		button3.texture_pressed = PRESSED_RED
+	if current_player.inventory["meteorite_ingot"] >= 6:
+		button4.texture_pressed = PRESSED_GREEN
+	else:
+		button4.texture_pressed = PRESSED_RED
+	if current_player.inventory["gold"] >= 15:
+		button5.texture_pressed = PRESSED_GREEN
+	else:
+		button5.texture_pressed = PRESSED_RED
 
 func close_ui():
 	if current_player:
@@ -54,10 +77,14 @@ func _on_button1_pressed():
 	
 	# wood -> stone (requires 10 stone)
 	if current_player.inventory["stone"] >= 10:
+		button1.texture_pressed = PRESSED_GREEN
 		current_player.inventory["stone"] -= 10
 		current_player.equipment_level = "stone"
 		print("Upgraded to Stone!")
+		button1.texture_normal = TLACITKO_GREEN_NORM
+		button1.disabled = true
 	else:
+		button1.texture_pressed = PRESSED_RED
 		print("Not enough stone!")
 
 
@@ -67,10 +94,14 @@ func _on_button2_pressed():
 	
 	# stone -> iron (requires 3 iron ingot)
 	if current_player.inventory["iron_ingot"] >= 3:
+		button2.texture_pressed = PRESSED_GREEN
 		current_player.inventory["iron_ingot"] -= 3
 		current_player.equipment_level = "iron"
 		print("Upgraded to Iron!")
+		button2.texture_normal = TLACITKO_GREEN_NORM
+		button2.disabled = true
 	else:
+		button2.texture_pressed = PRESSED_RED
 		print("Not enough iron ingots!")
 
 
@@ -80,10 +111,14 @@ func _on_button3_pressed():
 	
 	# iron -> urukh iron (requires 2 urukh iron ingot)
 	if current_player.inventory["urukh_iron_ingot"] >= 2:
+		button3.texture_pressed = PRESSED_GREEN
 		current_player.inventory["urukh_iron-ingot"] -= 2
 		current_player.equipment_level = "urukh_iron"
 		print("Upgraded to Urukh Iron!")
+		button3.texture_normal = TLACITKO_GREEN_NORM
+		button3.disabled = true
 	else:
+		button3.texture_pressed = PRESSED_RED
 		print("Not enough urukh iron ingots!")
 
 
@@ -93,23 +128,30 @@ func _on_button4_pressed():
 	
 	# urukh iron -> meteorite (requires 6 meteorite ingot)
 	if current_player.inventory["meteorite_ingot"] >= 6:
+		button4.texture_pressed = PRESSED_GREEN
 		current_player.inventory["meteorite_ingot"] -= 6
 		current_player.equipment_level = "meteorite"
 		print("Upgraded to Meteorite!")
+		button4.texture_normal = TLACITKO_GREEN_NORM
+		button4.disabled = true
 	else:
 		print("Not enough meteorite ingots!")
+		button4.texture_pressed = PRESSED_RED
 func _on_button5_pressed():
 	if not current_player:
 		return
 		
 	# check if player has 15 gold (ingots)
 	if current_player.inventory.has("gold") and current_player.inventory["gold"] >= 15:
+		button5.texture_pressed = PRESSED_GREEN
 		current_player.inventory["gold"] -= 15
 		current_player.equipment_level = "gold"
 		
 		# update ui after change
 		get_tree().call_group("ui", "update_table", current_player.inventory)
-		
+		button5.texture_normal = TLACITKO_GREEN_NORM
 		print("Upgraded to Gold!")
+		button5.disabled = true
 	else:
 		print("Not enough gold ingots!")
+		button5.texture_pressed = PRESSED_RED

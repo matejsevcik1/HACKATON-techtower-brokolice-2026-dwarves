@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c1hp3jr0vclwv" path="res://assets/images/gui/apgrejdr.png" id="3_uxcy8"]
 [ext_resource type="Texture2D" uid="uid://clk0k7d5ldx84" path="res://assets/images/gui/tlacitko_male.png" id="4_58i4n"]
 [ext_resource type="Texture2D" uid="uid://dtktpshl3tmn1" path="res://assets/images/gui/pressed.png" id="5_45m7t"]
-[ext_resource type="Texture2D" uid="uid://buh3w52r81kl8" path="res://assets/images/gui/pec_off.png" id="6_5cqhb"]
+[ext_resource type="Texture2D" uid="uid://do8o5uh0p6nbp" path="res://assets/images/gui/satanek_button_close.png" id="6_5cqhb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_61l8k"]
 radius = 11.0

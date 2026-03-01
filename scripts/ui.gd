@@ -80,7 +80,7 @@ func update_equipment():
 
 	equipment_label.text = "Equipment: " + str(level)
 
-	print("Equipment updated:", level)
+	
 
 
 # OPTIONAL: Call this when equipment changes

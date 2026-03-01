@@ -10,6 +10,6 @@ region = Rect2(0, 0, 10, 10)
 [resource]
 script = ExtResource("1_fsmb4")
 texture = SubResource("AtlasTexture_ydtff")
-value = 5
+value = 3
 name = "stone"
 metadata/_custom_type_script = "uid://cx5yg0bk7musc"

@@ -6,6 +6,7 @@ const SPEED = 70.0
 @onready var hitbox_ladder: Area2D = $hitbox_ladder
 @onready var hitbox_shops: Area2D = $hitbox_shops
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var ui_overlay: CanvasLayer = $Camera2D/ui_overlay
 
 signal inventory_changed(inventory)
 
@@ -35,7 +36,7 @@ var inventory = {
 
 func _ready() -> void:
 	add_to_group("player")
-
+	ui_overlay.hide()
 
 
 func add_ore(item: String, amount: int) -> void:
@@ -128,11 +129,13 @@ func get_direction_name(dir: Vector2) -> String:
 func update_hitbox_position() -> void:
 	hitbox.position = last_direction.normalized() * 13
 
-
+var tut_done:bool=false
 func ladder_tp() -> void:
 	for body in hitbox_ladder.get_overlapping_bodies():
 		if body.has_method("tp"):
 			body.tp(self)
+			if not tut_done:
+				ui_overlay.show()
 
 
 func shop_open() -> void:

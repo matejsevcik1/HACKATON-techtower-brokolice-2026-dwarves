@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://pcpicttpopeg" path="res://scripts/smelter.gd" id="1_fmp04"]
 [ext_resource type="Texture2D" uid="uid://cyp1pgaimtugf" path="res://assets/images/buildings/pec.png" id="2_kyrrd"]
 [ext_resource type="Texture2D" uid="uid://dphcxsrlgpjcu" path="res://assets/images/gui/smelters_bez_tlacitek.png" id="3_38f0m"]
-[ext_resource type="Texture2D" uid="uid://do8o5uh0p6nbp" path="res://assets/images/gui/satanek_button_close.png" id="4_8f58d"]
 [ext_resource type="Texture2D" uid="uid://clk0k7d5ldx84" path="res://assets/images/gui/tlacitko_male.png" id="4_kt0kq"]
 [ext_resource type="Texture2D" uid="uid://dtktpshl3tmn1" path="res://assets/images/gui/pressed.png" id="5_kyrrd"]
+[ext_resource type="Texture2D" uid="uid://buh3w52r81kl8" path="res://assets/images/gui/pec_off.png" id="6_kyrrd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fmp04"]
 radius = 11.045361
@@ -155,4 +155,4 @@ offset_top = 6.0
 offset_right = 40.0
 offset_bottom = 37.0
 action_mode = 0
-texture_normal = ExtResource("4_8f58d")
+texture_normal = ExtResource("6_kyrrd")

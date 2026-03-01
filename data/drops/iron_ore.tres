@@ -10,6 +10,6 @@ region = Rect2(0, 10, 10, 10)
 [resource]
 script = ExtResource("1_1ortr")
 texture = SubResource("AtlasTexture_xxo6j")
-value = 10
+value = 4
 name = "iron_ore"
 metadata/_custom_type_script = "uid://cx5yg0bk7musc"

@@ -7,6 +7,8 @@ extends StaticBody2D
 @onready var button2: TextureButton = $CanvasLayer/Control/Button2
 @onready var button3: TextureButton = $CanvasLayer/Control/Button3
 @onready var buttonoff: TextureButton = $CanvasLayer/Control/button_off
+const PRESSED_GREEN = preload("uid://cwpl6jkn5up0f")
+const PRESSED_RED = preload("uid://c2ltee0fdjxli")
 
 
 
@@ -30,6 +32,18 @@ func open_ui(player):
 	ui_root.visible = true
 	player.is_using_shop = true
 	player.velocity = Vector2.ZERO
+	if current_player.inventory.has("iron_ore") and current_player.inventory["iron_ore"] >= 4:
+		button1.texture_pressed = PRESSED_GREEN
+	else:
+		button1.texture_pressed = PRESSED_RED
+	if current_player.inventory.has("urukh_iron_ore") and current_player.inventory["urukh_iron_ore"] >= 4:
+		button2.texture_pressed = PRESSED_GREEN
+	else:
+		button2.texture_pressed = PRESSED_RED
+	if current_player.inventory.has("meteorite_ore") and current_player.inventory["meteorite_ore"] >= 4:
+		button3.texture_pressed = PRESSED_GREEN
+	else:
+		button3.texture_pressed = PRESSED_RED
 
 func close_ui():
 	if current_player:
@@ -43,12 +57,14 @@ func _on_button1_pressed():
 	
 	# 4 iron ore → 1 iron ingot
 	if current_player.inventory.has("iron_ore") and current_player.inventory["iron_ore"] >= 4:
+		button1.texture_pressed = PRESSED_GREEN
 		current_player.inventory["iron_ore"] -= 4
 		current_player.add_ore("iron_ingot", 1)
 		
 		get_tree().call_group("ui", "update_table", current_player.inventory)
 		print("Crafted 1 Iron Ingot")
 	else:
+		button1.texture_pressed = PRESSED_RED
 		print("Not enough iron ore!")
 
 
@@ -58,12 +74,14 @@ func _on_button2_pressed():
 	
 	# 4 urukh iron ore → 1 urukh iron ingot
 	if current_player.inventory.has("urukh_iron_ore") and current_player.inventory["urukh_iron_ore"] >= 4:
+		button2.texture_pressed = PRESSED_GREEN
 		current_player.inventory["urukh_iron_ore"] -= 4
 		current_player.add_ore("urukh_iron_ingot", 1)
 		
 		get_tree().call_group("ui", "update_table", current_player.inventory)
 		print("Crafted 1 Urukh Iron Ingot")
 	else:
+		button2.texture_pressed = PRESSED_RED
 		print("Not enough urukh iron ore!")
 
 
@@ -73,12 +91,14 @@ func _on_button3_pressed():
 	
 	# 6 meteorite ore → 1 meteorite ingot
 	if current_player.inventory.has("meteorite_ore") and current_player.inventory["meteorite_ore"] >= 6:
+		button3.texture_pressed = PRESSED_GREEN
 		current_player.inventory["meteorite_ore"] -= 6
 		current_player.add_ore("meteorite_ingot", 1)
 		
 		get_tree().call_group("ui", "update_table", current_player.inventory)
 		print("Crafted 1 Meteorite Ingot")
 	else:
+		button3.texture_pressed = PRESSED_RED
 		print("Not enough meteorite ore!")
 	
 func _on_button_off_pressed():

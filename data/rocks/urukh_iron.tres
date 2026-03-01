@@ -11,7 +11,7 @@ region = Rect2(48, 0, 24, 24)
 [resource]
 script = ExtResource("1_qarom")
 texture = SubResource("AtlasTexture_edgqi")
-category = 2
+category = 3
 maxHealth = 4
 rarity = 20
 depth = 4
